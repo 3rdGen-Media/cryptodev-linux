@@ -22,11 +22,12 @@ SHA_CTX ctx;
 	SHA_Final(digest, &ctx);
 }
 
+/*
 void aes_sha_combo(void* ctx, void* plaintext, void* ciphertext, int size, void* tag)
 {
 uint8_t iv[16];
 AES_KEY* key = ctx;
-HMAC_CTX hctx;
+HMAC_CTX hctx = {0};
 unsigned int rlen = 20;
 
 	HMAC_CTX_init(&hctx);
@@ -39,12 +40,14 @@ unsigned int rlen = 20;
 
 	AES_cbc_encrypt(plaintext, ciphertext, size, key, iv, 1);
 }
+*/
 
 int get_sha1_threshold()
 {
 	return hash_test(CRYPTO_SHA1, sha_hash);
 }
 
+/*
 int get_aes_sha1_threshold()
 {
 AES_KEY key;
@@ -59,3 +62,4 @@ uint8_t ukey[16];
 	return aead_test(CRYPTO_AES_CBC, CRYPTO_SHA1, ukey, 16, &key, aes_sha_combo);
 }
 
+*/

@@ -6,5 +6,7 @@
  *
  * Running time ~= 1.2 seconds per call.
  */
+
+//struct HMAC_CTX;
 int get_sha1_threshold();
-int get_aes_sha1_threshold();
+//int get_aes_sha1_threshold();

@@ -3,11 +3,15 @@
 
 #include <stdint.h>
 
+#define	AES_BLOCK_SIZE	16
+
 struct cryptodev_ctx {
 	int cfd;
-	struct session_op sess;
+	struct session2_op sess;
 	uint16_t alignmask;
 };
+
+
 
 int sha_ctx_init(struct cryptodev_ctx* ctx, int cfd, const uint8_t *key, unsigned int key_size);
 void sha_ctx_deinit();

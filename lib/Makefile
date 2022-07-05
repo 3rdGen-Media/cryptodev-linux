@@ -1,5 +1,5 @@
 CFLAGS=-g -O2 -Wall
-
+g
 all: benchmark
 
 benchmark: main.c libthreshold.a
@@ -8,7 +8,7 @@ benchmark: main.c libthreshold.a
 .o:
 	gcc $(CCFLAGS) -c $< -o $@
 
-libthreshold.a: benchmark.o hash.o threshold.o combo.o
+libthreshold.a: benchmark.o hash.o threshold.o
 	ar  rcs $@ $^
 
 clean:
